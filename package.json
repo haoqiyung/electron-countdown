@@ -1,0 +1,68 @@
+{
+  "name": "countdown",
+  "version": "2.2.4",
+  "description": "countdown",
+  "main": "main.js",
+  "scripts": {
+    "build": "electron-builder --win --ia32"
+  },
+  "build": {
+    "productName": "countdown",
+    "appId": "top.bietiaop.countdown",
+    "asarUnpack": [
+      "src/audio/**/*",
+      "src/music.json",
+      "node_modules/**/*",
+      "src/fonts/**/*",
+      "src/music/**/*",
+      "src/fontawesome/**/*",
+      "src/genshin.ttf",
+      "src/windows-wallpaper.exe"
+    ],
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://countdown.tempest.blue/release"
+      }
+    ],
+    "copyright": "bietiaop",
+    "compression": "store",
+    "directories": {
+      "output": "build"
+    },
+    "asar": true,
+    "win": {
+      "icon": "./nsis/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./nsis/icon.ico",
+      "uninstallerIcon": "./nsis/remove.ico",
+      "installerHeaderIcon": "./nsis/icon.ico",
+      "installerSidebar": "./nsis/sidebar.bmp",
+      "packElevateHelper": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "uninstallDisplayName": "倒计时",
+      "shortcutName": "倒计时"
+    }
+  },
+  "keywords": [],
+  "author": "bietiaop",
+  "license": "ISC",
+  "dependencies": {
+    "electron-store": "^8.0.1",
+    "electron-updater": "^4.3.9",
+    "node-cmd": "^5.0.0",
+    "request": "^2.88.2",
+    "wallpaper": "^6.1.1"
+  },
+  "devDependencies": {
+    "electron": "^16.0.2",
+    "electron-builder": "^22.14.5",
+    "electron-updater": "^4.3.9"
+  }
+}
